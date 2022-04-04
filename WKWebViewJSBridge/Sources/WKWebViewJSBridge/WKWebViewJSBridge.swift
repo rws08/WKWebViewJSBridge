@@ -9,14 +9,15 @@ public class WKWebViewJSBridge {
     public private(set) var basePath = "app"
     public private(set) var toPath = "receiveNative"
     
-    static private var receivePool: [String: JSBReceiver] = [:]
+    private var receiverPool: [String: JSBReceiver] = [:]
     
     private let bag = DisposeBag()
+    private var disposeBagScript: [String: Disposable] = [:]
     
     private enum KEY: String, CaseIterable {
         case requestIDSwift
         case requestIDWeb
-        case requestPath
+        case requestAll
     }
 
     public init(_ webview: WKWebView, basePath: String = "app", toPath: String = "receiveNative") {
@@ -33,25 +34,25 @@ public class WKWebViewJSBridge {
     private func setReceiver() {
         // receive JSBridge
         webView.configuration.userContentController.rx.scriptMessage(forName: toPath)
-            .bind { scriptMessage in
+            .bind { [weak self] scriptMessage in
                 printWKWebViewJSBridge("Received <- Web: \(scriptMessage.body)")
                 let receiveJson = jsonObjFromBase64(scriptMessage.body)
                 printWKWebViewJSBridge("Received <- Web: \(receiveJson)")
                 
                 KEY.allCases.forEach { item in
                     if let requestKey = receiveJson[item.rawValue] as? String,
-                       let regeistedReceiver = WKWebViewJSBridge.receivePool[requestKey] {
+                       let regeistedReceiver = self?.receiverPool[requestKey] {
                         printWKWebViewJSBridge("regeistedReceiver")
                         regeistedReceiver(true, receiveJson)
                         if item == .requestIDSwift || item == .requestIDWeb {
-                            WKWebViewJSBridge.receivePool[requestKey] = nil
+                            self?.receiverPool[requestKey] = nil
                         }
                     }
                 }
             }.disposed(by: self.bag)
     }
     
-    public func requestWeb(path: String, param: [String: Any] = [:], receiver: JSBReceiver? = nil) {
+    public func requestWeb(name: String, param: [String: Any] = [:], receiver: JSBReceiver? = nil) {
         let requestID = UUID().uuidString
         var param = param
         param[KEY.requestIDSwift.rawValue] = requestID
@@ -67,7 +68,7 @@ public class WKWebViewJSBridge {
         }
         
         let jsonBase64 = json.base64EncodedString()
-        let request = "\(self.basePath).\(path)('\(jsonBase64)');"
+        let request = "\(self.basePath).\(name)('\(jsonBase64)');"
         printWKWebViewJSBridge("Request -> Web : \(request)")
         
         self.webView.rx.evaluateJavaScript(request)
@@ -81,11 +82,11 @@ public class WKWebViewJSBridge {
                    requestID == requestIDWeb {
                     printWKWebViewJSBridge("Received <- Web: \(receiveJson)")
                     receiver(true, receiveJson)
-                    WKWebViewJSBridge.receivePool[requestIDWeb] = nil
+                    self.receiverPool[requestIDWeb] = nil
                 }
             }, onError: { error in
                 printWKWebViewJSBridge(error)
-                WKWebViewJSBridge.receivePool[requestID] = nil
+                self.receiverPool[requestID] = nil
             }, onCompleted: {
                 
             }, onDisposed: {
@@ -95,6 +96,23 @@ public class WKWebViewJSBridge {
         
     /// Web에서 호출한 JSBridge
     public func addReceiverHandler(name: String, _ receiver: @escaping JSBReceiver) {
-        WKWebViewJSBridge.receivePool[name] = receiver
+        self.receiverPool[name] = receiver
+        // dispose old script
+        if let oldScript = disposeBagScript[name] {
+            oldScript.dispose()
+            webView.configuration.userContentController.removeScriptMessageHandler(forName: name)
+        }
+        // receive JSBridge
+        let scriptDispose = webView.configuration.userContentController.rx.scriptMessage(forName: name)
+            .bind { [weak self] scriptMessage in
+                printWKWebViewJSBridge("Received <- Web: \(scriptMessage.body)")
+                let receiveJson = jsonObjFromBase64(scriptMessage.body)
+                printWKWebViewJSBridge("Received <- Web: \(receiveJson)")
+                
+                if let regeistedReceiver = self?.receiverPool[name] {
+                    regeistedReceiver(true, receiveJson)
+                }
+            }
+        disposeBagScript[name] = scriptDispose
     }
 }

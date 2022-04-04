@@ -30,7 +30,7 @@
     const KEY = {
         requestIDWeb: 'requestIDWeb',
         requestIDSwift: 'requestIDSwift',
-        requestPath: 'requestPath'
+        requestAll: 'requestAll'
     }
 
     function WKWebViewJSBridge() {
@@ -41,40 +41,18 @@
             function receiveWeb(data) {
                 console.log('receiveWeb');
                 var jsonObj = jsonObjFromBase64(data);
-                jsonObj = processJSBridge(jsonObj)
-                bridgeLog(jsonObj["result"]);
-                requestSwift("", jsonObj);
-            }
-            
-            function onlyRequest(data) {
-                console.log('OnlyRequest');
-                var jsonObj = jsonObjFromBase64(data);
-                jsonObj = processJSBridge(jsonObj)
-                bridgeLog(jsonObj["title"] + ": "+ jsonObj["result"]);
-            }
-            
-            function roundRequest(data) {
-                console.log('RoundRequest');
-                var jsonObj = jsonObjFromBase64(data);
-                jsonObj = processJSBridge(jsonObj)
-                bridgeLog(jsonObj["title"] + ": "+ jsonObj["result"]);
-                
-                if (jsonObj[KEY.requestIDSwift]) {
-                    requestSwift("", jsonObj);
-                }
-            }
-            
-            function multiRequest(data) {
-                console.log('MultiRequest');
-                var jsonObj = jsonObjFromBase64(data);
                 const delay = jsonObj["delay"]
                 jsonObj = processJSBridge(jsonObj)
                 bridgeLog(jsonObj["title"] + ": "+ jsonObj["result"] + ": " + delay);
                 
                 if (jsonObj[KEY.requestIDSwift]) {
-                    setTimeout(function() {
-                        requestSwift("", jsonObj);
-                    }, delay * 1000);
+                    if (delay) {
+                        setTimeout(function() {
+                            requestSwift(jsonObj);
+                        }, delay * 1000);
+                    } else {
+                        requestSwift(jsonObj);
+                    }
                 }
             }
             
@@ -89,15 +67,15 @@
                 },
                 "OnlyRequest": function(data) {
                     console.log('Receive -> Web : ' + data);
-                    onlyRequest(data);
+                    receiveWeb(data);
                 },
                 "RoundRequest": function(data) {
                     console.log('Receive -> Web : ' + data);
-                    roundRequest(data);
+                    receiveWeb(data);
                 },
                 "MultiRequest": function(data) {
                     console.log('Receive -> Web : ' + data);
-                    multiRequest(data);
+                    receiveWeb(data);
                 },
                 "CustomRequest": function(data) {
                     console.log('Receive -> Web : ' + data);
