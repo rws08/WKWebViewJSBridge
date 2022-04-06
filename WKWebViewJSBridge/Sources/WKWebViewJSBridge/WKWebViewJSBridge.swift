@@ -16,7 +16,6 @@ public class WKWebViewJSBridge: WKWebView {
     private enum KEY: String, CaseIterable {
         case requestIDSwift
         case requestIDWeb
-        case requestAll
     }
     
     public func initJSBridge(_ basePath: String = "app", toPath: String = "receiveNative") {
@@ -50,7 +49,7 @@ public class WKWebViewJSBridge: WKWebView {
             }.disposed(by: self.bag)
     }
     
-    public func requestWeb(name: String, param: [String: Any] = [:], receiver: JSBReceiver? = nil) {
+    public func requestWeb(name: String = "receiveWeb", param: [String: Any] = [:], receiver: JSBReceiver? = nil) {
         let requestID = UUID().uuidString
         var param = param
         param[KEY.requestIDSwift.rawValue] = requestID
@@ -114,5 +113,13 @@ public class WKWebViewJSBridge: WKWebView {
         disposeBagScript[name] = scriptDispose
         
         return self
+    }
+    
+    static public func isNeedReceive(_ data: [String: Any]) -> Bool {
+        if let requestIDWeb = data[KEY.requestIDWeb.rawValue] as? String,
+           !requestIDWeb.isEmpty {
+            return true
+        }
+        return false
     }
 }

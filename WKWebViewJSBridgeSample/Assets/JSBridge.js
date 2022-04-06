@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <div style="height: 100px; overflow: scroll; border:solid 1px green;" id="logScroll">
+        <div style="height: 150px; overflow: scroll; border:solid 1px green;" id="logScroll">
             <xmp id="log" style="font-size: 12"></xmp>
         </div>
         <p>
@@ -20,17 +20,14 @@
             <input type="button" id="btnRequest3" value="Multi Request" onclick="MultiRequest();"
             />
         </p>
-        <p>
-            <input type="button" id="btnRequest4" value="Custom Request" onclick="CustomRequest();"
-            />
-        </p>
     </body>
     <script>
 
+    const IS_TEST = true
+
     const KEY = {
         requestIDWeb: 'requestIDWeb',
-        requestIDSwift: 'requestIDSwift',
-        requestAll: 'requestAll'
+        requestIDSwift: 'requestIDSwift'
     }
 
     function WKWebViewJSBridge() {
@@ -40,20 +37,36 @@
             
             function receiveWeb(data) {
                 console.log('receiveWeb');
-                var jsonObj = jsonObjFromBase64(data);
-                const delay = jsonObj["delay"]
-                jsonObj = processJSBridge(jsonObj)
-                bridgeLog(jsonObj["title"] + ": "+ jsonObj["result"] + ": " + delay);
-                
-                if (jsonObj[KEY.requestIDSwift]) {
-                    if (delay) {
-                        setTimeout(function() {
-                            requestSwift(jsonObj);
-                        }, delay * 1000);
+                // process
+                var jsonObj = processWeb(data)
+                if (jsonObj[KEY.requestIDWeb] && receivePool[jsonObj[KEY.requestIDWeb]]) {
+                    receivePool[jsonObj[KEY.requestIDWeb]](jsonObj);
+                } else {
+                    bridgeLog(jsonObj["title"] + ": " + jsonObj["result"]);
+                    // request
+                    if (IS_TEST) {
+                        const delay = jsonObj["delay"]
+                        if (jsonObj[KEY.requestIDSwift]) {
+                            if (delay) {
+                                setTimeout(function() {
+                                    requestSwift(jsonObj);
+                                }, delay * 1000);
+                            } else {
+                                requestSwift(jsonObj);
+                            }
+                        }
                     } else {
                         requestSwift(jsonObj);
                     }
                 }
+            }
+            
+            function processWeb(data) {
+                var jsonObj = jsonObjFromBase64(data);                
+                if (jsonObj[KEY.requestIDWeb] == null) {
+                    jsonObj = processJSBridge(jsonObj)
+                }
+                return jsonObj
             }
             
             function customRequest(data) {
@@ -76,10 +89,6 @@
                 "MultiRequest": function(data) {
                     console.log('Receive -> Web : ' + data);
                     receiveWeb(data);
-                },
-                "CustomRequest": function(data) {
-                    console.log('Receive -> Web : ' + data);
-                    customRequest(data);
                 }
             }
         }()
@@ -100,7 +109,8 @@
         }
     }
 
-    var jsbridge = WKWebViewJSBridge();
+    const jsbridge = WKWebViewJSBridge();
+    var receivePool = {};
 
     function bridgeLog(logContent) {
         document.getElementById("log").innerHTML += logContent + "\n";
@@ -109,32 +119,44 @@
         logScroll.scrollTop = logScroll.scrollHeight;
     }
 
-    function requestSwift(path, param, callback) {
-        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.receiveNative) {
-            var jsonObj = param
-            if (path) {
-                jsonObj[KEY.requestPath] = path
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+    }
+
+    function requestSwift(param, path = "receiveNative", callback) {
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers[path]) {
+            const requestID = uuidv4()
+            param[KEY.requestIDWeb] = requestID
+            if (callback) {
+                receivePool[requestID] = callback
             }
-            const jsonString = btoa(encodeURIComponent(JSON.stringify(jsonObj)));
+            
+            const jsonString = btoa(encodeURIComponent(JSON.stringify(param)));
             console.log('Request -> Native : ' + jsonString);
-            window.webkit.messageHandlers.receiveNative.postMessage(jsonString);
+            window.webkit.messageHandlers[path].postMessage(jsonString);
         }
     }
 
     function OnlyRequest() {
-        requestSwift("OnlyRequest", {"title": "Only Requests from Web"});
+        requestSwift({"title": "Only Requests from Web"}, "OnlyRequest");
     }
 
     function RoundRequest() {
-        
+        requestSwift({"title": "Round Requests from Web"}, "RoundRequest", function(jsonObj) {
+            bridgeLog(jsonObj["title"]);
+        });
     }
 
     function MultiRequest() {
-        
-    }
-
-    function CustomRequest() {
-        
+        requestSwift({"title": "Multi Requests from Web 1", "delay":3}, "MultiRequest", function(jsonObj) {
+            bridgeLog(jsonObj["title"]);
+        });
+        requestSwift({"title": "Multi Requests from Web 2", "delay":1}, "MultiRequest", function(jsonObj) {
+            bridgeLog(jsonObj["title"]);
+        });
     }
 
     </script>
