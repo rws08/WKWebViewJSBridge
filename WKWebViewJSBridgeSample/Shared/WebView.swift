@@ -10,25 +10,23 @@ import WebKit
 import WKWebViewJSBridge
 
 struct WebView: UIViewRepresentable {
-    public var jsbridge: WKWebViewJSBridge
-    
-    private var webView = WKWebView()
+    var webviewJSB = WKWebViewJSBridge()
     
     init() {
-        webView.loadHTMLString(WebView.jsSample, baseURL: nil)
-        jsbridge = WKWebViewJSBridge(webView)
+        webviewJSB.initJSBridge()
+        webviewJSB.loadHTMLString(WebView.jsSample, baseURL: nil)
     }
     
-    func makeUIView(context: Context) -> WKWebView {
-        return webView
+    func makeUIView(context: Context) -> WKWebViewJSBridge {
+        return webviewJSB
     }
     
-    func updateUIView(_ webView: WKWebView, context: Context) {
+    func updateUIView(_ webView: WKWebViewJSBridge, context: Context) {
         print(WebView.jsSample)
     }
     
     func addReceiverHandler(name: String, _ receiver: @escaping JSBReceiver) -> WebView {
-        jsbridge.addReceiverHandler(name: name, receiver)
+        _ = webviewJSB.addReceiverHandler(name: name, receiver)
         return self
     }
     

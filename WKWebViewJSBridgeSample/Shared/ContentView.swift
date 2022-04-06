@@ -30,16 +30,22 @@ struct ContentView: View {
         VStack {
             webview
                 .addReceiverHandler(name: "OnlyRequest") { _, json in
-                    addLog(text: json?["title"] as? String)
+                    addLog(text: json["title"] as? String)
                 }
                 .addReceiverHandler(name: "RoundRequest") { _, json in
-                    addLog(text: json?["title"] as? String)
+                    addLog(text: json["title"] as? String)
+                    var jsonObj = json
+                    jsonObj["result"] = true
+                    if let title = json["title"] as? String {
+                        jsonObj["title"] = "\(title), processed on swift"
+                    }
+                    webview.webviewJSB.requestWeb(name: "RoundRequest", param: jsonObj)
                 }
                 .addReceiverHandler(name: "MultiRequest") { _, json in
-                    addLog(text: json?["title"] as? String)
+                    addLog(text: json["title"] as? String)
                 }
                 .addReceiverHandler(name: "CustomRequest") { _, json in
-                    addLog(text: json?["title"] as? String)
+                    addLog(text: json["title"] as? String)
                 }
             VStack {
                 ScrollViewReader { scrollview in
@@ -53,29 +59,29 @@ struct ContentView: View {
                 .frame(maxHeight: 100)
                 .border(Color.red)
                 Button("Request") {
-                    webview.jsbridge.requestWeb(name: "receiveWeb", param: ["title":"Request"]) { _, json in
-                        addLog(text: json?["result"] as? String)
+                    webview.webviewJSB.requestWeb(name: "receiveWeb", param: ["title":"Request"]) { _, json in
+                        addLog(text: json["result"] as? String)
                     }
                 }
                 Button("Only Request") {
-                    webview.jsbridge.requestWeb(name: "OnlyRequest", param: ["title":"Only Requests from Swift"])
+                    webview.webviewJSB.requestWeb(name: "OnlyRequest", param: ["title":"Only Requests from Swift"])
                 }
                 Button("Round Request") {
-                    webview.jsbridge.requestWeb(name: "RoundRequest", param: ["title":"Round Requests from Swift"]) { _, json in
-                        addLog(text: json?["title"] as? String)
+                    webview.webviewJSB.requestWeb(name: "RoundRequest", param: ["title":"Round Requests from Swift"]) { _, json in
+                        addLog(text: json["title"] as? String)
                     }
                 }
                 Button("Multi Request") {
-                    webview.jsbridge.requestWeb(name: "MultiRequest", param: ["title":"Multi Requests from Swift 1", "delay":3]) { _, json in
-                        addLog(text: json?["title"] as? String)
+                    webview.webviewJSB.requestWeb(name: "MultiRequest", param: ["title":"Multi Requests from Swift 1", "delay":3]) { _, json in
+                        addLog(text: json["title"] as? String)
                     }
                     
-                    webview.jsbridge.requestWeb(name: "MultiRequest", param: ["title":"Multi Requests from Swift 2", "delay":1]) { _, json in
-                        addLog(text: json?["title"] as? String)
+                    webview.webviewJSB.requestWeb(name: "MultiRequest", param: ["title":"Multi Requests from Swift 2", "delay":1]) { _, json in
+                        addLog(text: json["title"] as? String)
                     }
                 }
                 Button("Custom Request") {
-                    webview.jsbridge.requestWeb(name: "CustomRequest", param: ["title":"Custom Requests from Swift"])
+                    webview.webviewJSB.requestWeb(name: "CustomRequest", param: ["title":"Custom Requests from Swift"])
                 }
                 Spacer()
                 }
