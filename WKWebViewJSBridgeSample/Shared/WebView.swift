@@ -13,7 +13,6 @@ struct WebView: UIViewRepresentable {
     var webviewJSB = WKWebViewJSBridge()
     
     init() {
-        webviewJSB.initJSBridge()
         webviewJSB.loadHTMLString(WebView.jsSample, baseURL: nil)
     }
     
