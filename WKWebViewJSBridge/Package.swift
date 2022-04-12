@@ -29,6 +29,8 @@ let package = Package(
             dependencies: ["RxSwift", "RxWebKit"]),
         .testTarget(
             name: "WKWebViewJSBridgeTests",
-            dependencies: ["WKWebViewJSBridge"]),
+            dependencies: ["WKWebViewJSBridge"],
+            resources: [
+                .copy("JSBridge.js")]),
     ]
 )

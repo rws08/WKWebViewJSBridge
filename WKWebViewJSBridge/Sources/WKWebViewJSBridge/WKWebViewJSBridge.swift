@@ -84,24 +84,9 @@ public class WKWebViewJSBridge: WKWebView {
         
         self.rx.evaluateJavaScript(request)
             .debug("evaluateJavaScript")
-            .subscribe(onNext: {
-                let receiveJson = jsonObjFromBase64($0)
-                printWKWebViewJSBridge("Completed <- Web : \(receiveJson)")
-                
-                if let receiver = receiver,
-                   let requestIDWeb = receiveJson[KEY.requestIDWeb.rawValue] as? String,
-                   requestID == requestIDWeb {
-                    printWKWebViewJSBridge("Received <- Web: \(receiveJson)")
-                    receiver(true, receiveJson)
-                    self.receiverPool[requestIDWeb] = nil
-                }
-            }, onError: { error in
+            .subscribe(onError: { error in
                 printWKWebViewJSBridge(error)
                 self.receiverPool[requestID] = nil
-            }, onCompleted: {
-                
-            }, onDisposed: {
-                
             }).dispose()
     }
         
