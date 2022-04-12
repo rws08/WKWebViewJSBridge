@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E356928927E99CCC00BB40B6 /* JSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = E356928827E99CCC00BB40B6 /* JSBridge.js */; };
+		E356928A27E99CCC00BB40B6 /* JSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = E356928827E99CCC00BB40B6 /* JSBridge.js */; };
+		E356928B27E99CCC00BB40B6 /* JSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = E356928827E99CCC00BB40B6 /* JSBridge.js */; };
+		E356928C27E99CCC00BB40B6 /* JSBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = E356928827E99CCC00BB40B6 /* JSBridge.js */; };
+		E35CD99227E4145A00B154B9 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD99127E4145A00B154B9 /* Tests_iOS.swift */; };
+		E35CD99427E4145A00B154B9 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD99327E4145A00B154B9 /* Tests_iOSLaunchTests.swift */; };
+		E35CD99E27E4145A00B154B9 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD99D27E4145A00B154B9 /* Tests_macOS.swift */; };
+		E35CD9A027E4145A00B154B9 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD99F27E4145A00B154B9 /* Tests_macOSLaunchTests.swift */; };
+		E35CD9A127E4145A00B154B9 /* WKWebViewJSBridgeSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD97927E4145800B154B9 /* WKWebViewJSBridgeSampleApp.swift */; };
+		E35CD9A227E4145A00B154B9 /* WKWebViewJSBridgeSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD97927E4145800B154B9 /* WKWebViewJSBridgeSampleApp.swift */; };
+		E35CD9A327E4145A00B154B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD97A27E4145800B154B9 /* ContentView.swift */; };
+		E35CD9A427E4145A00B154B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD97A27E4145800B154B9 /* ContentView.swift */; };
+		E35CD9A527E4145A00B154B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35CD97B27E4145A00B154B9 /* Assets.xcassets */; };
+		E35CD9A627E4145A00B154B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35CD97B27E4145A00B154B9 /* Assets.xcassets */; };
+		E35CD9B727E414B400B154B9 /* WKWebViewJSBridge in Frameworks */ = {isa = PBXBuildFile; productRef = E35CD9B627E414B400B154B9 /* WKWebViewJSBridge */; };
+		E35CD9B927E41C6B00B154B9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD9B827E41C6B00B154B9 /* WebView.swift */; };
+		E35CD9BA27E41C6B00B154B9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35CD9B827E41C6B00B154B9 /* WebView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E35CD98E27E4145A00B154B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E35CD97427E4145800B154B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E35CD97F27E4145A00B154B9;
+			remoteInfo = "WKWebViewJSBridgeSample (iOS)";
+		};
+		E35CD99A27E4145A00B154B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E35CD97427E4145800B154B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E35CD98527E4145A00B154B9;
+			remoteInfo = "WKWebViewJSBridgeSample (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E356928827E99CCC00BB40B6 /* JSBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSBridge.js; sourceTree = "<group>"; };
+		E35CD97927E4145800B154B9 /* WKWebViewJSBridgeSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewJSBridgeSampleApp.swift; sourceTree = "<group>"; };
+		E35CD97A27E4145800B154B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E35CD97B27E4145A00B154B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E35CD98027E4145A00B154B9 /* WKWebViewJSBridgeSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewJSBridgeSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35CD98627E4145A00B154B9 /* WKWebViewJSBridgeSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewJSBridgeSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35CD98827E4145A00B154B9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		E35CD98D27E4145A00B154B9 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35CD99127E4145A00B154B9 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		E35CD99327E4145A00B154B9 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		E35CD99927E4145A00B154B9 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35CD99D27E4145A00B154B9 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		E35CD99F27E4145A00B154B9 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		E35CD9B827E41C6B00B154B9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E35CD97D27E4145A00B154B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35CD9B727E414B400B154B9 /* WKWebViewJSBridge in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD98327E4145A00B154B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD98A27E4145A00B154B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD99627E4145A00B154B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E356928727E99CCC00BB40B6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E356928827E99CCC00BB40B6 /* JSBridge.js */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E35CD97327E4145800B154B9 = {
+			isa = PBXGroup;
+			children = (
+				E35CD97827E4145800B154B9 /* Shared */,
+				E356928727E99CCC00BB40B6 /* Assets */,
+				E35CD98727E4145A00B154B9 /* macOS */,
+				E35CD99027E4145A00B154B9 /* Tests iOS */,
+				E35CD99C27E4145A00B154B9 /* Tests macOS */,
+				E35CD98127E4145A00B154B9 /* Products */,
+				E35CD9B527E414B400B154B9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E35CD97827E4145800B154B9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E35CD97927E4145800B154B9 /* WKWebViewJSBridgeSampleApp.swift */,
+				E35CD97A27E4145800B154B9 /* ContentView.swift */,
+				E35CD97B27E4145A00B154B9 /* Assets.xcassets */,
+				E35CD9B827E41C6B00B154B9 /* WebView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E35CD98127E4145A00B154B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E35CD98027E4145A00B154B9 /* WKWebViewJSBridgeSample.app */,
+				E35CD98627E4145A00B154B9 /* WKWebViewJSBridgeSample.app */,
+				E35CD98D27E4145A00B154B9 /* Tests iOS.xctest */,
+				E35CD99927E4145A00B154B9 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E35CD98727E4145A00B154B9 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E35CD98827E4145A00B154B9 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		E35CD99027E4145A00B154B9 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E35CD99127E4145A00B154B9 /* Tests_iOS.swift */,
+				E35CD99327E4145A00B154B9 /* Tests_iOSLaunchTests.swift */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		E35CD99C27E4145A00B154B9 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E35CD99D27E4145A00B154B9 /* Tests_macOS.swift */,
+				E35CD99F27E4145A00B154B9 /* Tests_macOSLaunchTests.swift */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		E35CD9B527E414B400B154B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E35CD97F27E4145A00B154B9 /* WKWebViewJSBridgeSample (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E35CD9A927E4145A00B154B9 /* Build configuration list for PBXNativeTarget "WKWebViewJSBridgeSample (iOS)" */;
+			buildPhases = (
+				E35CD97C27E4145A00B154B9 /* Sources */,
+				E35CD97D27E4145A00B154B9 /* Frameworks */,
+				E35CD97E27E4145A00B154B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WKWebViewJSBridgeSample (iOS)";
+			packageProductDependencies = (
+				E35CD9B627E414B400B154B9 /* WKWebViewJSBridge */,
+			);
+			productName = "WKWebViewJSBridgeSample (iOS)";
+			productReference = E35CD98027E4145A00B154B9 /* WKWebViewJSBridgeSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E35CD98527E4145A00B154B9 /* WKWebViewJSBridgeSample (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E35CD9AC27E4145A00B154B9 /* Build configuration list for PBXNativeTarget "WKWebViewJSBridgeSample (macOS)" */;
+			buildPhases = (
+				E35CD98227E4145A00B154B9 /* Sources */,
+				E35CD98327E4145A00B154B9 /* Frameworks */,
+				E35CD98427E4145A00B154B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WKWebViewJSBridgeSample (macOS)";
+			productName = "WKWebViewJSBridgeSample (macOS)";
+			productReference = E35CD98627E4145A00B154B9 /* WKWebViewJSBridgeSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E35CD98C27E4145A00B154B9 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E35CD9AF27E4145A00B154B9 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				E35CD98927E4145A00B154B9 /* Sources */,
+				E35CD98A27E4145A00B154B9 /* Frameworks */,
+				E35CD98B27E4145A00B154B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E35CD98F27E4145A00B154B9 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = E35CD98D27E4145A00B154B9 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E35CD99827E4145A00B154B9 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E35CD9B227E4145A00B154B9 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				E35CD99527E4145A00B154B9 /* Sources */,
+				E35CD99627E4145A00B154B9 /* Frameworks */,
+				E35CD99727E4145A00B154B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E35CD99B27E4145A00B154B9 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = E35CD99927E4145A00B154B9 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E35CD97427E4145800B154B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					E35CD97F27E4145A00B154B9 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					E35CD98527E4145A00B154B9 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					E35CD98C27E4145A00B154B9 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = E35CD97F27E4145A00B154B9;
+					};
+					E35CD99827E4145A00B154B9 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = E35CD98527E4145A00B154B9;
+					};
+				};
+			};
+			buildConfigurationList = E35CD97727E4145800B154B9 /* Build configuration list for PBXProject "WKWebViewJSBridgeSample" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E35CD97327E4145800B154B9;
+			productRefGroup = E35CD98127E4145A00B154B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E35CD97F27E4145A00B154B9 /* WKWebViewJSBridgeSample (iOS) */,
+				E35CD98527E4145A00B154B9 /* WKWebViewJSBridgeSample (macOS) */,
+				E35CD98C27E4145A00B154B9 /* Tests iOS */,
+				E35CD99827E4145A00B154B9 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E35CD97E27E4145A00B154B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356928927E99CCC00BB40B6 /* JSBridge.js in Resources */,
+				E35CD9A527E4145A00B154B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD98427E4145A00B154B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356928A27E99CCC00BB40B6 /* JSBridge.js in Resources */,
+				E35CD9A627E4145A00B154B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD98B27E4145A00B154B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356928B27E99CCC00BB40B6 /* JSBridge.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD99727E4145A00B154B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356928C27E99CCC00BB40B6 /* JSBridge.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E35CD97C27E4145A00B154B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35CD9B927E41C6B00B154B9 /* WebView.swift in Sources */,
+				E35CD9A327E4145A00B154B9 /* ContentView.swift in Sources */,
+				E35CD9A127E4145A00B154B9 /* WKWebViewJSBridgeSampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD98227E4145A00B154B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35CD9BA27E41C6B00B154B9 /* WebView.swift in Sources */,
+				E35CD9A427E4145A00B154B9 /* ContentView.swift in Sources */,
+				E35CD9A227E4145A00B154B9 /* WKWebViewJSBridgeSampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD98927E4145A00B154B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35CD99427E4145A00B154B9 /* Tests_iOSLaunchTests.swift in Sources */,
+				E35CD99227E4145A00B154B9 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E35CD99527E4145A00B154B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35CD9A027E4145A00B154B9 /* Tests_macOSLaunchTests.swift in Sources */,
+				E35CD99E27E4145A00B154B9 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E35CD98F27E4145A00B154B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E35CD97F27E4145A00B154B9 /* WKWebViewJSBridgeSample (iOS) */;
+			targetProxy = E35CD98E27E4145A00B154B9 /* PBXContainerItemProxy */;
+		};
+		E35CD99B27E4145A00B154B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E35CD98527E4145A00B154B9 /* WKWebViewJSBridgeSample (macOS) */;
+			targetProxy = E35CD99A27E4145A00B154B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E35CD9A727E4145A00B154B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E35CD9A827E4145A00B154B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E35CD9AA27E4145A00B154B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klip.WKWebViewJSBridgeSample;
+				PRODUCT_NAME = WKWebViewJSBridgeSample;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E35CD9AB27E4145A00B154B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klip.WKWebViewJSBridgeSample;
+				PRODUCT_NAME = WKWebViewJSBridgeSample;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E35CD9AD27E4145A00B154B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klip.WKWebViewJSBridgeSample;
+				PRODUCT_NAME = WKWebViewJSBridgeSample;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E35CD9AE27E4145A00B154B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klip.WKWebViewJSBridgeSample;
+				PRODUCT_NAME = WKWebViewJSBridgeSample;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E35CD9B027E4145A00B154B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klip.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WKWebViewJSBridgeSample (iOS)";
+			};
+			name = Debug;
+		};
+		E35CD9B127E4145A00B154B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klip.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WKWebViewJSBridgeSample (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E35CD9B327E4145A00B154B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klip.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "WKWebViewJSBridgeSample (macOS)";
+			};
+			name = Debug;
+		};
+		E35CD9B427E4145A00B154B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klip.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "WKWebViewJSBridgeSample (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E35CD97727E4145800B154B9 /* Build configuration list for PBXProject "WKWebViewJSBridgeSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E35CD9A727E4145A00B154B9 /* Debug */,
+				E35CD9A827E4145A00B154B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E35CD9A927E4145A00B154B9 /* Build configuration list for PBXNativeTarget "WKWebViewJSBridgeSample (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E35CD9AA27E4145A00B154B9 /* Debug */,
+				E35CD9AB27E4145A00B154B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E35CD9AC27E4145A00B154B9 /* Build configuration list for PBXNativeTarget "WKWebViewJSBridgeSample (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E35CD9AD27E4145A00B154B9 /* Debug */,
+				E35CD9AE27E4145A00B154B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E35CD9AF27E4145A00B154B9 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E35CD9B027E4145A00B154B9 /* Debug */,
+				E35CD9B127E4145A00B154B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E35CD9B227E4145A00B154B9 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E35CD9B327E4145A00B154B9 /* Debug */,
+				E35CD9B427E4145A00B154B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E35CD9B627E414B400B154B9 /* WKWebViewJSBridge */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WKWebViewJSBridge;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E35CD97427E4145800B154B9 /* Project object */;
+}
