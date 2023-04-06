@@ -3,6 +3,8 @@
 ## Description
 WKWebView를 상속해서 JSBridge를 사용할 수 있도록 구현되어 있습니다.
 
+<img width=60% alt="flow" src="https://user-images.githubusercontent.com/7792240/230246807-4f5b4cc2-89e9-43f4-8a6e-3137a4262f70.png">
+
 ## Installation
 
 ### Swift Package Manager
