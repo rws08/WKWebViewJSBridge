@@ -42,7 +42,7 @@ webviewJSB.addReceiverHandler(name: "OnlyRequest") { _, json in
 }
 ```
 
-For details of JS, refer to the `JSBridge.js` file.
+For details of JS, refer to the [`JSBridge.js`](https://github.com/rws08/WKWebViewJSBridge/Tests/WKWebViewJSBridgeTests/JSBridge.js) file.
 
 ## License
 
